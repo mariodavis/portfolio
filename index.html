@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>David Githaiga | Terminal Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="terminal-container">
+    <div class="terminal-header">
+      <div class="header-left">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="header-title">david@security-box:~</span>
+      </div>
+      <div class="header-right">
+        <span class="status-indicator"></span> ONLINE
+      </div>
+    </div>
+
+    <div class="terminal-body" id="terminal-body">
+      <!-- Top ASCII Banner automatically displayed -->
+      <pre class="ascii-banner">
+██████╗  █████╗ ██╗   ██╗██╗██████╗     ██████╗ ██╗████████╗██╗  ██╗██████╗ ██╗██████╗  █████╗ 
+██╔══██╗██╔══██╗██║   ██║██║██╔══██╗    ██╔════╝ ██║╚══██╔══╝██║  ██║██╔══██╗██║██╔══██╗██╔══██╗
+██║  ██║███████║██║   ██║██║██║  ██║    ██║  ███╗██║   ██║   ███████║██████╔╝██║██████╔╝███████║
+██║  ██║██╔══██║╚██╗ ██╔╝██║██║  ██║    ██║   ██║██║   ██║   ██╔══██║██╔══██╗██║██╔══██╗██╔══██║
+██████╔╝██║  ██║ ╚████╔╝ ██║██████╔╝    ╚██████╔╝██║   ██║   ██║  ██║██║  ██║██║██████╔╝██║  ██║
+╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═════╝      ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ ╚═╝  ╚═╝
+      </pre>
+      
+      <div class="welcome-msg">
+        <p><strong>System initialized.</strong> Welcome to David Githaiga's terminal interface.</p>
+        <p>Type <span class="cmd-highlight">help</span> or click any command below to explore.</p>
+      </div>
+
+      <div class="quick-nav">
+        <button onclick="runCommand('about')">about</button>
+        <button onclick="runCommand('skills')">skills</button>
+        <button onclick="runCommand('projects')">projects</button>
+        <button onclick="runCommand('blogs')">blogs</button>
+        <button onclick="runCommand('contact')">contact</button>
+        <button onclick="runCommand('clear')">clear</button>
+      </div>
+
+      <div id="output-area"></div>
+
+      <div class="input-line">
+        <span class="prompt">david@security-box:~$</span>
+        <input type="text" id="cli-input" placeholder="Type a command..." autofocus autocomplete="off" spellcheck="false" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Linux-style Floating Blogs Window -->
+  <div id="blog-window" class="window hidden">
+    <div class="window-header" id="window-header">
+      <div class="window-title">
+        <span class="window-icon">📄</span> Blogs & Technical Writeups - bash
+      </div>
+      <div class="window-controls">
+        <button class="win-btn minimize" onclick="toggleBlogWindow()">_</button>
+        <button class="win-btn close" onclick="toggleBlogWindow()">✕</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="blog-sidebar">
+        <div class="sidebar-title">📁 Articles</div>
+        <ul id="blog-list">
+          <!-- Dynamically populated -->
+        </ul>
+      </div>
+      <div class="blog-content" id="blog-content">
+        <div class="placeholder-msg">Select a writeup from the sidebar to start reading.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
