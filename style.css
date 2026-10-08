@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0b0f19;
+  color: #00ff66;
+  font-family: 'Fira Code', monospace;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.terminal-container {
+  width: 90vw;
+  max-width: 1000px;
+  height: 85vh;
+  background: rgba(13, 17, 23, 0.95);
+  border: 1px solid #1f293d;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 255, 102, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  background: #161b22;
+  padding: 10px 15px;
+  border-bottom: 1px solid #1f293d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.header-title {
+  color: #8b949e;
+  font-size: 0.85rem;
+  margin-left: 10px;
+}
+
+.header-right {
+  font-size: 0.75rem;
+  color: #8b949e;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: #00ff66;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff66;
+}
+
+.terminal-body {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.ascii-banner {
+  color: #00ff66;
+  font-size: 0.65rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.welcome-msg {
+  color: #c9d1d9;
+  margin-bottom: 15px;
+  border-left: 3px solid #00ff66;
+  padding-left: 10px;
+}
+
+.cmd-highlight {
+  color: #00ff66;
+  font-weight: bold;
+}
+
+.quick-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.quick-nav button {
+  background: #21262d;
+  color: #58a6ff;
+  border: 1px solid #30363d;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quick-nav button:hover {
+  background: #30363d;
+  color: #00ff66;
+  border-color: #00ff66;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.prompt {
+  color: #58a6ff;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+#cli-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.history-line {
+  margin: 10px 0;
+  color: #c9d1d9;
+}
+
+/* Linux Desktop Blog Window */
+.window {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 70vw;
+  height: 70vh;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.hidden { display: none !important; }
+
+.window-header {
+  background: #161b22;
+  padding: 8px 12px;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+}
+
+.window-title { color: #c9d1d9; font-size: 0.85rem; }
+
+.win-btn {
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 0.9rem;
+}
+
+.win-btn.close:hover { color: #ff5f56; }
+
+.window-body {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.blog-sidebar {
+  width: 250px;
+  background: #161b22;
+  border-right: 1px solid #30363d;
+  padding: 10px;
+}
+
+.sidebar-title { color: #8b949e; font-size: 0.8rem; margin-bottom: 10px; }
+
+#blog-list { list-style: none; }
+
+#blog-list li {
+  padding: 8px 10px;
+  color: #c9d1d9;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+#blog-list li:hover, #blog-list li.active {
+  background: #21262d;
+  color: #00ff66;
+}
+
+.blog-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  color: #c9d1d9;
+  line-height: 1.6;
+}
+
+.blog-content h2 { color: #00ff66; margin-bottom: 5px; }
+.blog-date { color: #8b949e; font-size: 0.8rem; margin-bottom: 15px; }
